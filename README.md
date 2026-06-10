@@ -1,73 +1,109 @@
-# React + TypeScript + Vite
+# 🏁 Piston Cup Central
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> An interactive AR race experience inspired by the Pixar Cars universe.
 
-Currently, two official plugins are available:
+![Cars Theme](./src/assets/TokyoDrift.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📖 About
 
-## React Compiler
+Piston Cup Central is a web application that lets users browse race tracks from the Cars universe and launch an Augmented Reality race experience on their phone. Select a track on the website, scan the QR code with the app, place the AR track on any flat surface, and race.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+### Website
+- Browse and select from multiple Cars-themed race tracks
+- Track info including length, surface type and difficulty
+- QR code per track to launch the AR experience
+- Auto-rotating featured track with progress bar
+- Instructions overlay
+- Fully responsive design
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### AR App (Unity)
+- Place a 3D race track in the real world via AR
+- Race bots with varying speeds for replayability
+- In-race leaderboard showing position and lap
+- Countdown timer visible from any angle
+- Gas input to control your car's speed
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React + TypeScript |
+| Styling | Tailwind CSS v4 |
+| AR | Unity |
+| Build tool | Vite |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/piston-cup-central.git
+
+# Navigate to project
+cd piston-cup-central
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The app will be available at `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Project Structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── assets/          # Race track images
+├── components/
+│   ├── FeaturedTrackInfo.tsx   # Featured track card with progress bar
+│   ├── Header.tsx              # Header with instructions overlay
+│   ├── MoreTracks.tsx          # Scrollable track list
+│   └── TrackInfoRow.tsx        # Individual track row
+├── data/
+│   └── mock.ts      # Track data
+├── types/
+│   └── Track.ts     # Track type definition
+├── App.tsx          # Main app with auto-rotation logic
+└── index.css        # Global styles and Tailwind theme
+```
+
+## 🎮 How to Play
+
+1. **Pick a track** from the list on the right
+2. **Download** the Piston Cup Central app on your phone
+3. **Scan the QR code** on the website with the app
+4. **Place the track** on a flat surface
+5. **Hit the gas** and race to the finish!
+
+## 🔮 Future Features
+
+- QR code linking between website and AR app
+- Multiple selectable tracks in AR
+- Reward system with unlockable content
+- Online leaderboard with best lap times
+- Track size and rotation adjustment
+
+## 👤 Author
+
+**Niek van den Berg**
+Student — ICTUI, Hogeschool Windesheim
+S1197189
+
+---
+
+*Built as part of the individual AR project — Cyclus 5, Datapunt 12*
+
+---
+
+## ⚠️ Disclaimer
+
+This is a non-commercial student project created for educational purposes only. Cars, Piston Cup, Lightning McQueen, and all related characters and trademarks are the property of Disney/Pixar. This project is not affiliated with, endorsed by, or connected to Disney or Pixar in any way. No copyright infringement is intended.
