@@ -58,14 +58,14 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen w-full font-sans p-10">
+    <div className="min-h-screen lg:h-screen lg:overflow-hidden w-full font-sans pl-10 pr-10 pt-10 flex flex-col">
       <Header />
-      <div className="flex flex-col lg:flex-row justify-between gap-5 pt-10">
-        <div className="animate-fade-in-up w-full">
+      <div className="flex flex-col lg:flex-row justify-between gap-5 pt-10 flex-1 lg:min-h-0">
+        <div className="animate-fade-in-up w-full lg:min-h-0 lg:overflow-hidden">
           <FeaturedTrackInfo track={featuredTrack} progress={progress} />
         </div>
 
-        <div className="animate-slide-in-right">
+        <div className="animate-slide-in-right lg:min-h-0 lg:overflow-y-auto">
           <MoreTracks
             tracks={tracks.slice(1)}
             changeTrack={handleChangeTrack}
